@@ -1,0 +1,10 @@
+services:
+  glpk:
+    build:
+      context: .
+    volumes:
+      - ./:/app
+    env_file:
+      - .env
+    command: glpsol -m $MODNAME.mod -d $DATNAME.dat -o $OUTNAME.out
+
